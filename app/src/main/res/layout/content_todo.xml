@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainLayoutId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/Theme.Todos.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            app:popupTheme="@style/Theme.Todos.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RadioGroup
+        android:id="@+id/priorityGroupId"
+        android:layout_width="280dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorityTxtId">
+
+        <RadioButton
+            android:id="@+id/highId"
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:text="high"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="381dp" />
+
+        <RadioButton
+            android:id="@+id/mediumId"
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:text="medium"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="414dp" />
+
+        <RadioButton
+            android:id="@+id/lowId"
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:text="low"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="448dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/titleTxtId"
+        android:layout_width="259dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="80dp"
+        android:text="Title"
+        app:layout_constraintBottom_toTopOf="@+id/titleId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795" />
+
+    <EditText
+        android:id="@+id/titleId"
+        android:layout_width="273dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:hint="Title"
+        android:text="Title of the todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTxtId" />
+
+    <TextView
+        android:id="@+id/NotesTxtId"
+        android:layout_width="215dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:text="Notes"
+        app:layout_constraintBottom_toTopOf="@+id/notesId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleId"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <EditText
+        android:id="@+id/notesId"
+        android:layout_width="258dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Notes"
+        android:inputType="textMultiLine"
+        android:text="Notes..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleId" />
+
+    <TextView
+        android:id="@+id/priorityTxtId"
+        android:layout_width="163dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="Priority"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesId" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="113dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="168dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorityGroupId" />
+
+    <Button
+        android:id="@+id/btnMarkCompleted"
+        android:layout_width="148dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="168dp"
+        android:text="Mark as Complete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/priorityGroupId" />
+
+    <ImageButton
+        android:id="@+id/deleteBtn"
+        android:layout_width="43dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <EditText
+        android:id="@+id/txtDueDate"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="24dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorityGroupId"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <Button
+        android:id="@+id/btnDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtDueDate"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/txtDueDate"
+        android:layout_toRightOf="@+id/txtDueDate"
+        android:text="DUE DATE"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnMarkCompleted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtDueDate"
+        app:layout_constraintTop_toBottomOf="@+id/priorityGroupId"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <ImageButton
+        android:id="@+id/btnCalendar"
+        android:layout_width="57dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/titleTxtId"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
